@@ -9,7 +9,7 @@ setup(
     author='Edris Sharif Rahmani',
     author_email='rahmani.biotech@gmail.com',
     url='https://github.com/sharifrahmanie/PubMedWordCloud',
-    download_url='https://github.com/sharifrahmanie/PubMedWordCloud/archive/refs/tags/0.1.tar.gz',
+    download_url='https://github.com/sharifrahmanie/PubMedWordCloud/archive/refs/tags/v0.1.tar.gz',
     keywords=['PubMed', 'Word Cloud', 'NLP', 'Bioinformatics'],
     install_requires=[
         'nltk',
