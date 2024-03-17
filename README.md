@@ -21,7 +21,7 @@ pubmed_word_cloud.generate_pubmed_word_cloud(
 
 ```
 
-`search_term`` The search term for PubMed
+`search_term` The search term for PubMed
 `mask_image_path` The path to the mask image
 `n_papers` The number of papers to search
 `Freq` The frequency threshold
