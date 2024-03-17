@@ -2,10 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='PubMedWordCloud',
-    version='0.1',
+    version='0.1.3',
     packages=find_packages(),
     license='MIT',
     description='PubMedWordCloud is a Python package for generating word clouds from PubMed titles.',
+    package_data={'PubMedWordCloud': ['english']},
     author='Edris Sharif Rahmani',
     author_email='rahmani.biotech@gmail.com',
     url='https://github.com/sharifrahmanie/PubMedWordCloud',

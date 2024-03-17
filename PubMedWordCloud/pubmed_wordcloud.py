@@ -1,24 +1,24 @@
-from Bio import Entrez
+import os
+import argparse
 from datetime import datetime
 from collections import Counter
+import re
+import random
 from nltk.corpus import stopwords
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud, ImageColorGenerator
+from wordcloud import WordCloud
 from PIL import Image
 import numpy as np
-import random
-import os
-import re
-import nltk
-import argparse
+from Bio import Entrez
 
 class PubMedWordCloud:
-    def __init__(self, stopwords_list=None):
-        if stopwords_list is None:
-            nltk.download("stopwords")
-            self.stopwords = stopwords.words("english")
-        else:
-            self.stopwords = stopwords_list
+    def __init__(self):
+        self.stopwords_path = os.path.join(os.path.dirname(__file__), 'english')
+        self.load_stopwords()
+
+    def load_stopwords(self):
+        with open(self.stopwords_path, 'r') as file:
+            self.stopwords = file.read().splitlines()
 
     def fetch_pubmed_titles(self, search_term, n_papers=10):
         Entrez.email = 'rahmani.biotech@gmail.com' 
@@ -73,6 +73,7 @@ class PubMedWordCloud:
             mask=mask,
             color_func=random_color,
             random_state=42,
+            stopwords=self.stopwords
         ).generate(text)
 
         plt.figure(figsize=figsize)
@@ -103,7 +104,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    pubmed_word_cloud = PubMedWordCloud(stopwords_list="nltk_data")
+    pubmed_word_cloud = PubMedWordCloud()
     
     search_term = args.search_term
     mask_image_path = args.mask_image_path
@@ -120,4 +121,3 @@ if __name__ == "__main__":
         length=length,
         figsize=figsize
     )
-
