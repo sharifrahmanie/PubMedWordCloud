@@ -9,7 +9,7 @@ pip install PubMedWordCloud
 
 ```r{}
 from PubMedWordCloud.pubmed_wordcloud import PubMedWordCloud
-pubmed_word_cloud = PubMedWordCloud(stopwords_list="nltk_data")
+pubmed_word_cloud = PubMedWordCloud()
 pubmed_word_cloud.generate_pubmed_word_cloud(
     search_term = "Interleukin-13 production",
     mask_image_path = "dendritic_cell_mask.png",
