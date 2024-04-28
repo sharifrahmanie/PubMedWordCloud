@@ -18,7 +18,6 @@ pubmed_word_cloud.generate_pubmed_word_cloud(
     length = 5,
     figsize = (18, 18)
 )
-
 ```
 ## Parameters
 - `search_term` The search term for PubMed
@@ -27,3 +26,8 @@ pubmed_word_cloud.generate_pubmed_word_cloud(
 - `Freq` The frequency threshold
 - `length` The word length threshold
 - `figsize` The figure size (e.g., 18,18)
+
+
+![DC](dendritic_cell_mask.png)
+
+![DCWordCloud](wordcloud.png)
